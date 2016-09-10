@@ -19,10 +19,8 @@ public class Solution {
                     while (j > k && nums[j] == nums[j + 1]) j--;
                 } else if (sum < 0) {
                     k++;
-                    while (k < j && nums[k] == nums[k - 1]) k++;
                 } else if (sum > 0) {
                     j--;
-                    while (j > k && nums[j] == nums[j + 1]) j--;
                 }
             }
         }
