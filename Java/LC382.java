@@ -8,26 +8,26 @@
  */
 public class Solution {
     ListNode head;
+    Random random;
     /** @param head The linked list's head.
         Note that the head is guaranteed to be not null, so it contains at least one node. */
     public Solution(ListNode head) {
         this.head = head;
+        random = new Random();
     }
     
     /** Returns a random node's value. */
     public int getRandom() {
-        double r, max = -1;
-        int maxVal = 0;
+        int val = 0, i = 0;
         ListNode ptr = head;
         while (ptr != null) {
-            r = Math.random();
-            if (r > max) {
-                max = r;
-                maxVal = ptr.val;
+            if (random.nextInt(i + 1) == 0) {
+                val = ptr.val;
             }
+            i++;
             ptr = ptr.next;
         }
-        return maxVal;
+        return val;
     }
 }
 
